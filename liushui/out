@@ -1,0 +1,106 @@
+#!/bin/sh
+
+echo "head -n 2 /home/adminpay.syyx.cn_2018-06-20.log " 
+head -n 2 /home/adminpay.syyx.cn_2018-06-20.log  
+
+echo "head -n 2 /home/adminjgb.syyx.cn_2018-06-20.log " 
+head -n 2 /home/adminjgb.syyx.cn_2018-06-20.log  
+
+echo "head -n 2 /home/adminus.syyx.cn_2018-06-20.log " 
+head -n 2 /home/adminus.syyx.cn_2018-06-20.log  
+
+echo "head -n 2 /home/finance.syyx.cn_2018-06-20.log " 
+head -n 2 /home/finance.syyx.cn_2018-06-20.log  
+
+echo "head -n 2 /home/nycsdm.syyx.cn_2018-06-20.log " 
+head -n 2 /home/nycsdm.syyx.cn_2018-06-20.log  
+
+echo "head -n 2 /home/ggfx.syyx.cn_2018-06-20.log " 
+head -n 2 /home/ggfx.syyx.cn_2018-06-20.log  
+
+echo "head -n 2 /home/ad.syyx.cn_2018-06-20.log " 
+head -n 2 /home/ad.syyx.cn_2018-06-20.log  
+
+echo "head -n 2 /home/fwg.syyx.cn_2018-06-20.log " 
+head -n 2 /home/fwg.syyx.cn_2018-06-20.log  
+
+echo "head -n 2 /home/adminsyyx.syyx.cn_2018-06-20.log " 
+head -n 2 /home/adminsyyx.syyx.cn_2018-06-20.log  
+
+echo "head -n 2 /home/kfv.syyx.cn_2018-06-20.log " 
+head -n 2 /home/kfv.syyx.cn_2018-06-20.log  
+
+echo "head -n 2 /home/houtai.syyx.cn_2018-06-20.log " 
+head -n 2 /home/houtai.syyx.cn_2018-06-20.log  
+
+echo "head -n 2 /home/adminmlyx.syyx.cn_2018-06-20.log " 
+head -n 2 /home/adminmlyx.syyx.cn_2018-06-20.log  
+
+echo "head -n 2 /home/kfc2.syyx.cn_2018-06-20.log " 
+head -n 2 /home/kfc2.syyx.cn_2018-06-20.log  
+
+echo "head -n 2 /home/kfa.syyx.cn_2018-06-20.log " 
+head -n 2 /home/kfa.syyx.cn_2018-06-20.log  
+
+echo "head -n 2 /home/cw.syyx.cn_2018-06-20.log " 
+head -n 2 /home/cw.syyx.cn_2018-06-20.log  
+
+echo "head -n 2 /home/kfcm.syyx.cn_2018-06-20.log " 
+head -n 2 /home/kfcm.syyx.cn_2018-06-20.log  
+
+echo "head -n 2 /home/adminlz.syyx.cn_2018-06-20.log " 
+head -n 2 /home/adminlz.syyx.cn_2018-06-20.log  
+
+echo "head -n 2 /home/adminnycs.syyx.cn_2018-06-20.log " 
+head -n 2 /home/adminnycs.syyx.cn_2018-06-20.log  
+
+echo "head -n 2 /home/kfyq.syyx.cn_2018-06-20.log " 
+head -n 2 /home/kfyq.syyx.cn_2018-06-20.log  
+
+echo "head -n 2 /home/kfp.syyx.cn_2018-06-20.log " 
+head -n 2 /home/kfp.syyx.cn_2018-06-20.log  
+
+echo "head -n 2 /home/kfnx.syyx.cn_2018-06-20.log " 
+head -n 2 /home/kfnx.syyx.cn_2018-06-20.log  
+
+echo "head -n 2 /home/adminqile.syyx.cn_2018-06-20.log " 
+head -n 2 /home/adminqile.syyx.cn_2018-06-20.log  
+
+echo "head -n 2 /home/kfppay.syyx.cn_2018-06-20.log " 
+head -n 2 /home/kfppay.syyx.cn_2018-06-20.log  
+
+echo "head -n 2 /home/proxy_2018-06-20.log " 
+head -n 2 /home/proxy_2018-06-20.log  
+
+echo "head -n 2 /home/adminparty.syyx.cn_2018-06-20.log " 
+head -n 2 /home/adminparty.syyx.cn_2018-06-20.log  
+
+echo "head -n 2 /home/admincard.syyx.cn_2018-06-20.log " 
+head -n 2 /home/admincard.syyx.cn_2018-06-20.log  
+
+echo "head -n 2 /home/quanxian.syyx.cn_2018-06-20.log " 
+head -n 2 /home/quanxian.syyx.cn_2018-06-20.log  
+
+echo "head -n 2 /home/payagent.syyx.cn_2018-06-20.log " 
+head -n 2 /home/payagent.syyx.cn_2018-06-20.log  
+
+echo "head -n 2 /home/mgcw.syyx.cn_2018-06-20.log " 
+head -n 2 /home/mgcw.syyx.cn_2018-06-20.log  
+
+echo "head -n 2 /home/contract.syyx.c_2018-06-20.log "n
+head -n 2 /home/contract.syyx.c_2018-06-20.log n
+
+echo "head -n 2 /home/admin2.syyx.cn_2018-06-20.log " 
+head -n 2 /home/admin2.syyx.cn_2018-06-20.log  
+
+echo "head -n 2 /home/kfm.syyx.cn_2018-06-20.log " 
+head -n 2 /home/kfm.syyx.cn_2018-06-20.log  
+
+head -n 2 /home/kfc.syyx.cn_2018-06-20.log  
+
+
+
+
+
+
+
