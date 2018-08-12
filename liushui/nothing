@@ -1,0 +1,127 @@
+02:28813042
+02:28813439
+02:28813281
+02:28813192
+02:28813352
+02:28813070
+02:28813298
+02:28812991
+02:28813056
+02:28813210
+
+1 /home/nodeweb 1 --shared-data /root/code/node_webs/sites/party.hxddz.syyx.com/routes/common_master/master_xx.sd.js --local-storage
+
+
+29 Apr 09:28:35 - http_get http://gameapi.hxddz.syyx.cn:8891/get_statis_info?aid=15&sid=1&ch=13001&v&tid=-1&uid=3009824&date=2018-04-29&rid=1&index=0
+29 Apr 09:28:35 - http_get http://gameapi.hxddz.syyx.cn:8891/get_rank_list?aid=15&sid=1&ch=13001&verid=0&uid=0&date=2018-04-29&start=0&end=0
+29 Apr 09:28:35 - http_get http://gameapi.hxddz.syyx.cn:8891/get_rank_list?aid=15&sid=1&ch=13001&verid=0&uid=13001%3A3009824&date=2018-04-29&start=-1&end=1
+
+
+http://party.syyx.com/javascripts/nycs/challenge_week2/out.js
+http://party.syyx.com/stylesheets/nycs/challenge_week2/main.css
+http://r.syyx.com/party/nycs/challenge_week2/rank_0.png
+http://r.syyx.com/party/nycs/challenge_week2/rank_1_0.png
+http://r.syyx.com/party/nycs/challenge_week2/rank_1_1.png
+http://r.syyx.com/party/nycs/challenge_week2/rank_2.png
+	m_180504.005
+
+
+okr:
+
+1、目标与绩效管理列表sql语句还没根据年份区分，只是根据季度名称筛选(target_project)left join很长，之前改不全ok
+2、绩效奖金数据统计sql语句还没根据年份区分，只是根据季度名称筛选(staff_appraise)ok
+3、员工绩效奖励明细sql语句还没根据年份区分，只是根据季度名称筛选(staff_appraise)
+4、查看团队目标，取季度目标时sql语句还没根据年份区分，只是根据季度名称筛选(target_project)ok
+5、查看个人目标sql语句还没根据年份区分，只是根据季度名称筛选（target_staff）
+6、填写团队目标sql语句还没根据年份区分，只是根据季度名称筛选(target_project) 提交update时ok
+7、查看员工评价sql语句还没根据年份区分，只是根据季度名称筛选（staff_appraise）
+8、主管评价员工sql语句还没根据年份区分，只是根据季度名称筛选（staff_appraise）
+9、主管填写奖金sql语句还没根据年份区分，只是根据季度名称筛选（staff_appraise）
+10、查看团队自评里面，取部门列表时sql语句还没根据年份区分，只是根据季度名称筛选（appraise）ok
+11、查看合作调研取部门列表时sql语句还没根据年份区分，只是根据季度名称筛选（appraise）ok
+12、绩效存档显示没有年份分查询和update（appraise）
+13、首页提示里合作调研没有改好，year=null（appraise）
+
+
+
+
+1、 斗地主后台配置测试， 有魅力项配置、 互动表情配置、 社交配置、 魅力值配置。
+2、 斗地主活动测试， 有周末欢乐购及统计、 新年回馈赛、 vivo春节星耀赛、 oppo春节欢乐战、 华为棋牌大师赛、 vivo现金红包赛（ 30 分钟1场）、 vivo元宵欢乐赛、 华为大奖赛、 oppo棋牌大奖赛等等。
+3、 斗地主渠道下单、 支付测试， 有应用宝渠道接入， 30001 支付转发结果、 华为支付渠道增加欢乐包、 新增渠道31002(超惠玩)。
+4、 代理游戏测试， 有元气骑士华为包修改测试、 小小航海士华为sdk修改、 元气骑士春节版本、 元气骑士支付测试（ 酷派）、 小小航海士自动补单测试、 你行你上包体加固测试180321、 元气骑士复活节版本测试、 元气骑士复活节后版本测试。
+5、 诺亚开服需求测试， 七年情页面连接修改、 诺亚官网优化、 广告页、 微信上班族礼包、 诺亚上班族版pc页面优化、 挑战周活动页面。
+6、 诺亚活动测试， 有春节连续登陆抽奖接口。
+7、 okr绩效管理， okr二期需求（ 团队自评的优化）、 增加孵化项目、 18 年Q1需求（ 年度目标的增加、 个人目标权限修改、 年度目标增加修改历史记录、 部门目标的优化、 季度增加年份区别）
+8、 客服后台测试， 诺亚客服后台短信统计、 斗地主客服后台被注入优化、 斗地主流失用户监控优化。
+9、 其他站点测试， 财务后台欢喜德州财务优化、 魔法连盟搜集手机号的页面、 斗地主h5页面推广页及统计、 蒲公英官网增加ICP备案号、 诺亚手游数据分析（ 平均在线、 实时在线）
+
+
+
+
+
+
+
+
+{"name":"2018-诺亚OKR.xlsx","url":"http://okr.sygame.com/_att/attachment/2018-04-03/1522726976042.xlsx","type":"公开"}
+["{\"name\":\"2018-诺亚OKR.xlsx\",\"url\":\"http://okr.sygame.com/_att/attachment/2018-04-03/1522726976042.xlsx\",\"type\":\"公开\"}"]
+
+
+
+{"name":"人力资源部18年目标.jpg","url":"http://okr.sygame.com/_att/attachment/2018-04-12/1523515051934.jpg","type":"公开"}
+["{\"name\":\"人力资源部18年目标.jpg\",\"url\":\"http://okr.sygame.com/_att/attachment/2018-04-12/1523515051934.jpg\",\"type\":\"公开\"}"]
+
+
+{"name":"2018年财务部目标xlsx.xlsx","url":"http://okr.sygame.com/_att/attachment/2018-04-04/1522829867175.xlsx","type":"公开"}
+["{\"name\":\"2018年财务部目标xlsx.xlsx\",\"url\":\"http://okr.sygame.com/_att/attachment/2018-04-04/1522829867175.xlsx\",\"type\":\"公开\"}"]
+
+
+{"name":"营销中心2018年度OKR--持续更新补充2018.04.12.xlsx","url":"http://okr.sygame.com/_att/attachment/2018-04-12/1523518562506.xlsx","type":"公开"}
+["{\"name\":\"营销中心2018年度OKR--持续更新补充2018.04.12.xlsx\",\"url\":\"http://okr.sygame.com/_att/attachment/2018-04-12/1523518562506.xlsx\",\"type\":\"公开\"}"]
+
+
+{"name":"牧剑.rar","url":"http://okr.sygame.com/_att/attachment/2018-04-02/1522661411262.rar","type":"公开"}
+["{\"name\":\"牧剑.rar\",\"url\":\"http://okr.sygame.com/_att/attachment/2018-04-02/1522661411262.rar\",\"type\":\"公开\"}"]
+
+
+
+
+//21
+
+run_master:
+/root/code/tools/deps.js:161
+        db_conf.charset = item.charset || ''
+                        ^
+
+TypeError: Cannot set property 'charset' of undefined
+    at /root/code/tools/deps.js:161:25
+    at Array.map (native)
+    at connect_pfdbs (/root/code/tools/deps.js:156:23)
+    at /root/code/tools/deps.js:88:13
+    at fn (/root/code/node_modules/async/lib/async.js:585:34)
+    at Immediate._onImmediate (/root/code/node_modules/async/lib/async.js:495:34)
+    at processImmediate [as _immediateCallback] (timers.js:383:17)
+
+
+
+//澳大利亚vs秘鲁  发送
+
+name31	name31	1	qqq31
+name32	name32	2	qqq32
+name33	name33	3	qqq33
+name34	name34	4	qqq34
+name36	name36	6	qqq36
+name37	name37	7	qqq37
+name38	name38	8	qqq38
+name310	name310	10	qqq310
+name311	name311	11	qqq311
+name312	name312	12	qqq312
+name313	name313	13	qqq313
+name314	name314	14	qqq314
+name315	name315	15	qqq315
+name316	name316	16	qqq316
+name317	name317	17	qqq317
+name318	name318	18	qqq318
+name319	name319	19	qqq319
+name320	name320	20	qqq320
+name321	name321	21	qqq321
+name322	name322	22	qqq322
