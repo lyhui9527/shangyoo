@@ -19,11 +19,23 @@ var run_worker = function () {
 
     // Worker 进程有一个http服务器
     http.Server((req, res) => {
-       // console.log(req)
+        // console.log(req)
         res.writeHead(200);
         res.end('hello world pro: '+cluster.worker.id);
         // 通知 master 进程接收到了请求
         process.send({ cmd: 'notifyRequest' });
+
+        if(cluster.worker.id ==2){
+            setTimeout(function(){
+                console.log(cluster.worker.id,"sleep")
+            },2000)
+
+        }else{
+            setTimeout(function(){
+                console.log(cluster.worker.id,"sleep")
+            },2000) 
+        }
+
     }).listen(8000);
 
 }
@@ -33,9 +45,9 @@ var run_master = function () {
 
     // 跟踪 http 请求
     var numReqs = 0;
-    setInterval(() => {
-        console.log(`numReqs = ${numReqs}`);
-    }, 1000);
+    // setInterval(() => {
+    //     console.log(`numReqs = ${numReqs}`);
+    // }, 1000);
 
     // 计算请求数目
     function messageHandler(msg) {
