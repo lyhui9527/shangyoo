@@ -19,9 +19,9 @@ var run_worker = function () {
 
     // Worker 进程有一个http服务器
     http.Server((req, res) => {
-        console.log(req)
+       // console.log(req)
         res.writeHead(200);
-        res.end('hello world\n');
+        res.end('hello world pro: '+cluster.worker.id);
         // 通知 master 进程接收到了请求
         process.send({ cmd: 'notifyRequest' });
     }).listen(8000);
