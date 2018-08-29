@@ -17,24 +17,39 @@ console.log(argv)
 
 var run_worker = function () {
 
+
+
+
     // Worker 进程有一个http服务器
     http.Server((req, res) => {
         // console.log(req)
+
+
+
+        // if(cluster.worker.id ==2){
+        //     setTimeout(function(){
+        //         console.log(cluster.worker.id,"sleep")
+        //     },2000)
+
+        // }else{
+        //     setTimeout(function(){
+        //         console.log(cluster.worker.id,"sleep")
+        //     },100) 
+        // }
+        console.log(cluster.worker.id, "sleep ", req.url)
+        var data = req.url.toString().split(/[?&]/)
+        var arg = {}
+        data.forEach(function (item) {
+            arg[item.split('=')[0]] = item.split('=')[1];
+        })
         res.writeHead(200);
-        res.end('hello world pro: '+cluster.worker.id);
-        // 通知 master 进程接收到了请求
-        process.send({ cmd: 'notifyRequest' });
-
-        if(cluster.worker.id ==2){
-            setTimeout(function(){
-                console.log(cluster.worker.id,"sleep")
-            },2000)
-
-        }else{
-            setTimeout(function(){
-                console.log(cluster.worker.id,"sleep")
-            },2000) 
+        var ret = 0
+        if (arg.pw == 50000) {
+            ret = 1
         }
+        res.end(req.url + '&ret=' + ret);
+        // 通知 master 进程接收到了请求
+        process.send({ cmd: 'ok' });
 
     }).listen(8000);
 
@@ -45,13 +60,13 @@ var run_master = function () {
 
     // 跟踪 http 请求
     var numReqs = 0;
-    // setInterval(() => {
-    //     console.log(`numReqs = ${numReqs}`);
-    // }, 1000);
+    setInterval(() => {
+        console.log(`numReqs = ${numReqs}`);
+    }, 1000);
 
     // 计算请求数目
     function messageHandler(msg) {
-        if (msg.cmd && msg.cmd === 'notifyRequest') {
+        if (msg.cmd && msg.cmd === 'ok') {
             numReqs += 1;
         }
     }
@@ -60,6 +75,7 @@ var run_master = function () {
     const numCPUs = require('os').cpus().length;
     for (var i = 0; i < numCPUs; i++) {
         cluster.fork();
+    
     }
 
     for (const id in cluster.workers) {

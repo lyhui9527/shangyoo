@@ -11,7 +11,7 @@ var main = function() {
     var url_get = 'http://party3hxddz.syyx.com/fifa18/today_matches'
     var url_post = 'http://party3hxddz.syyx.com/fifa18/my_bet'
 
-    var count = 10;
+    var count = 10000;
 
 
     //post
@@ -37,7 +37,7 @@ var main = function() {
 
         data_get = '?servercode=100&uid=288125&sign=e3932c43107c70d7717b441890d6323e'
         request({
-            url: 'http://party3hxddz.syyx.com/crystal_bets/index.html?server_id=1&appid=1404&ver=176&chn=13001&uid=288129&sign=B6EC9C0E372A0867CF843A052ACD1182&imei=487489',
+            url: 'http://192.168.1.60:8000?gg=5452&ee=3301',
             method: "GET"
         }, function(err, req, body) {
             console.log(body)
