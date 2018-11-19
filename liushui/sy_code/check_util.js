@@ -148,7 +148,8 @@ return
 
 */
 
-;(function() {
+;
+(function() {
     // 检查函数，第一个参数为要检查的值，第二个参数为所在的对象
     var check_fun = {
         // 非假值检查，args为空
@@ -194,9 +195,9 @@ return
     var do_check = function(v, self, rule_array) {
         for (var i in rule_array) {
             var check_item = rule_array[i]
-            var args       = [v, self].concat(check_item.args || [])
+            var args = [v, self].concat(check_item.args || [])
 
-            var t          = check_fun[check_item.type].apply(null, args)
+            var t = check_fun[check_item.type].apply(null, args)
             if (!t) {
                 return check_item.tip
             }
@@ -208,9 +209,9 @@ return
         var check_result = ''
 
         // 如果有检查本身
-        if(check_rules._this_) {
+        if (check_rules._this_) {
             check_result = do_check(data, data, check_rules._this_)
-            if(check_result) {
+            if (check_result) {
                 return check_result
             }
         }
@@ -219,24 +220,24 @@ return
             return check_one(data, check_rules, ignore_del)
         }
 
-        for(var i = 0; i < data.length; i++) {
+        for (var i = 0; i < data.length; i++) {
             check_result = check_one(data[i], check_rules)
-            if(check_result) {
+            if (check_result) {
                 return check_result
             }
         }
     }
 
     var check_one = function(obj, check_rules, ignore_del) {
-        if(ignore_del && (!obj || obj.__is_del == 1)) {
+        if (ignore_del && (!obj || obj.__is_del == 1)) {
             return
         }
-        for(var k in check_rules) {
-            if(k == '_this_') {
+        for (var k in check_rules) {
+            if (k == '_this_') {
                 continue
             }
             check_result = check_one_key(k, obj, check_rules[k], ignore_del)
-            if(check_result) {
+            if (check_result) {
                 return check_result
             }
         }
@@ -246,9 +247,9 @@ return
         var v = value[key]
         var check_result = ''
         // 如果check_rules[k]是数组，说明里面存的是检查规则，直接进行检查
-        if(Array.isArray(check_rule)) {
+        if (Array.isArray(check_rule)) {
             check_result = do_check(v, value, check_rule)
-            if(check_result) {
+            if (check_result) {
                 return check_result
             }
         } else {
@@ -258,7 +259,7 @@ return
 
     var export_fun = check_multi
     if (typeof define === 'function' && typeof define.amd === 'object' && define.amd) {
-       // AMD. Register as an anonymous module.
+        // AMD. Register as an anonymous module.
         define(function() {
             return export_fun
         });
