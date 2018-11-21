@@ -8,9 +8,10 @@ function test5() {
             b_li: ['', '', '']
         }],
         c_obj: {
-            c_obj_num: 999
+            c_obj_num: "855"
         }
     }]
+
 
     var must_array = function(value, self) {
         return Array.isArray(value)

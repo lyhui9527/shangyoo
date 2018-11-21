@@ -1,18 +1,23 @@
 #!/root/code/tools/node/node4.x64
 
+/*
+ 创建多进程服务器，使用cluster
+ 主进程和子进程之间的通讯
+*/
+
 const cluster = require('cluster');
 const http = require('http');
 const fs = require('fs');
 
 
-var data = fs.readFileSync('./in', 'utf8').toString().split('\r\n'); //tongbu read source 
-var argv = {}
-data.forEach(function (i) {
-    var key = i.split('@')[0];
-    var val = i.split('@')[1];
-    argv[key] = val
-})
-console.log(argv)
+// var data = fs.readFileSync('./in', 'utf8').toString().split('\r\n'); //tongbu read source 
+// var argv = {}
+// data.forEach(function (i) {
+//     var key = i.split('@')[0];
+//     var val = i.split('@')[1];
+//     argv[key] = val
+// })
+// console.log(argv)
 
 
 var run_worker = function () {

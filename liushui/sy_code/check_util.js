@@ -208,6 +208,10 @@ return
         // console.log('check_multi', data, check_rules, !Array.isArray(data))
         var check_result = ''
 
+        // if(ignore_del && (!obj || obj.__is_del == 1)) {
+        //     return
+        // }
+
         // 如果有检查本身
         if (check_rules._this_) {
             check_result = do_check(data, data, check_rules._this_)

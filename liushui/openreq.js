@@ -8,14 +8,16 @@ var request = require('request');
 const cluster = require('cluster');
 
 
-var count = 1000
+var count = 200
 var pos = 0
 var random = Math.ceil(Math.random() * 100000)
 
 var pw = 0
 var url = 'http://party3hxddz.syyx.com/mj_game_party/init?&sid=1&chn=20&ver=100&uid=' + Math.ceil(Math.random() * 1000000) + '&award_type=' + Math.ceil(Math.random() * 2) + '&award_rank=' + Math.ceil(Math.random() * 4)
-url = 'http://pf.nycs.syyx.cn/army_has_attended?account=liushui&server_id='
 
+url = 'http://party.hxddz.syyx.com/thanksgiving/insert_data?name=payok&uid=529630510&pay_amount=100&item_id=543&pf_id=123&pk_id=123&pay_id=123&chn=02&ver=205&order_id='
+    // url = 'http://party3hxddz.syyx.com/thanksgiving/draw_award?chn=02&ver=1.0.0&sign=xxx&servercode=50&_=0.860525818455115&serverid=1&uid='
+    // url2 = 'http://party3hxddz.syyx.com/thanksgiving/draw_discount?chn=02&ver=1.0.0&sign=xxx&servercode=50&_=0.860525818455115&serverid=1&uid='
 var run_worker = function() {
 
     main();
@@ -24,19 +26,22 @@ var run_worker = function() {
 }
 
 var main = function() {
+    // + '&cluster=' + cluster.worker.id
+    var exta = Math.ceil(Math.random() * 10000001300)
     pw++
     request({
-        url: url + Math.ceil(Math.random() * 20) + '&cluster=' + cluster.worker.id,
+        url: url + exta,
         // url: 'http://192.168.1.60:8000?request='+cluster.worker.id+'&pw='+pw,
         method: "GET"
     }, function(err, req, body) {
+
+
         if (pos < count) {
             pos++;
             main();
             // console.log(body)
             var data = JSON.parse(body)
             console.log(pos, '-----', data)
-
 
             //     var data = body.toString().split(/[?&]/)
             //     var arg = {}
@@ -47,7 +52,15 @@ var main = function() {
             // if(arg.ret=='1'){
             //  process.send({ cmd: 'ok' });    
             // }
+
         }
+        // request({
+        //     url: url2 + exta,
+        //     // url: 'http://192.168.1.60:8000?request='+cluster.worker.id+'&pw='+pw,
+        //     method: "GET"
+        // }, function(err, req, body) {
+        //     console.log(pos, '-----', data)
+        // });
     });
     return
 

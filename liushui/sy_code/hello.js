@@ -30,3 +30,25 @@ var sort_desc = function(a, b) {
 
 
 console.log(date1.sort(sort_desc))
+
+if(temp.indexOf('temp/nycs_')){
+	ret=temp.spilt('temp')[1]
+	out
+}
+if(temp.indexOf('serverid=')){
+	ret ='serverid'+temp.spilt('serverid')[1]
+	out
+}
+if(temp.indexOf('=')){
+	ret ='serverid'+temp.spilt('serverid')[1]
+	out
+}
+if(temp.indexOf('active=')){
+	ret ='active'+temp.spilt('active')[1]
+	out
+}
+if(temp.indexOf('active=')){
+	ret ='active'+temp.spilt('active')[1]
+	out
+}
+
