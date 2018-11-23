@@ -2,10 +2,10 @@
 
 var mysql = require('/root/code/node_modules/mysql');
 var connection = mysql.createConnection({
-    host: '192.168.1.60',
+    host: '192.168.10.238',
     user: 'root',
     password: '123456',
-    database: 'hxddz_party'
+    database: 'kf'
     // database: 'test'
 });
 
@@ -60,7 +60,7 @@ var func = function(count) { //分批次同步处理，同批次异步，更全�
 }
 //func(0);
 
-var funmax = 10000000;
+var funmax = 10000;
 var pos = 0;
 var id = [1, 2, 3];
 var acc = '用户';
@@ -70,7 +70,7 @@ var str = 'test'
 var start = new Date();
 
 
-funmax = 1000
+funmax=200000
 
 
 
@@ -122,11 +122,11 @@ var strcat = function(col, row) {
 var funsyn = function() { //同步处理，更加内存不会挤爆
 
     var t = Math.floor(Math.random() * 3);
-    var uid = Math.ceil(Math.random() * 10000000);
-    var mid = Math.floor(Math.random() * 3);
-    var data = ['1', '13001', '190', uid, '868035031407692', '100', '1', mid, 'd', '200', '2018-06-05 14:05:49'];
-    data = [1, 2, '2018-06-05 14:05:49', '2018-06-05 14:05:49', 2, 4, '2018-06-05 14:05:49', '2018-06-05 14:05:49', 3, 5, '2018-06-05 14:05:49', '2018-06-05 14:05:49']
-
+    var phone = Math.ceil(Math.random() * 1000000000);
+    var paymoney= Math.floor(Math.random() * 100000);
+    var grade = Math.floor(Math.random() * 1000);
+    var mobiletype = Math.floor(Math.random() * 3);
+    var data = [phone,paymoney,grade,mobiletype]
 
     var result = strcat(11, 1000);
 
@@ -134,8 +134,13 @@ var funsyn = function() { //同步处理，更加内存不会挤爆
         result.str;
     // sql ="SELECT DATE_ADD('2018-04-01 5',INTERVAL FLOOR(RAND()* 90) DAY ) as a"
 
+    var sql = "INSERT INTO nysycallingup (`mobile`, `paymoney`, `grade`,`mobiletype`) VALUES(? , ? , ? , ?)"
+    
+   // sql ="SELECT DATE_ADD('2018-04-01 5',INTERVAL FLOOR(RAND()* 90) DAY ) as a"
+        
+   console.log(sql)
 
-    connection.query(sql, result.data, function(err, result) {
+    connection.query(sql,data, function(err, result) {
 
         if (err) console.log(err)
         pos++
