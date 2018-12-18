@@ -1,25 +1,56 @@
-var i = 1;
-setInterval(function() {
-	console.log(new Date(), i);
+var phone = {}
+var call = []
+var target_phone = []
 
-	i++;
+var maxnum = 2000
 
-<<<<<<< HEAD
+var start = Date.now()
 
-
-// var i=1;
-//     setInterval(function(){
-//         console.log(new Date(),i );
-
-//         i++;
-
-//     },1000)
-
-
-
-for (var i =1;i<60;i++){
-	console.log(Math.ceil(Math.random() * 1000000))
+for (var i = 0; i < maxnum; i++) {
+    var t = Math.ceil(Math.random() * 1000000)
+    console.log(t)
+    phone[t] = true
 }
-=======
-}, 1000)
->>>>>>> db02731cd61de4a2565f96fc8f95573d253624e0
+
+// for (var i = 0; i < maxnum; i++) {
+//     var t = Math.ceil(Math.random() * 100000)
+//     call.push(t)
+// }
+
+// console.log(Date.now() - start)
+
+// start
+// console.log("ok")
+// var sum = 0
+// start = Date.now()
+// var tp = Object.keys(phone)
+// for (var i = 0; i < call.length; i++) {
+//     if (phone[call[i]]) {
+//         phone[call[i]] = false
+//     }
+
+// }
+// for (var i in phone) {
+//     if (phone[i]) {
+//     	target_phone.push(i)
+//         sum++
+
+//     }
+// }
+
+
+// console.log(Date.now() - start)
+
+// console.log(Object.keys(phone).length)
+// console.log(sum,target_phone.length)
+// // console.log(target_phone)
+
+
+
+
+
+
+
+
+
+
