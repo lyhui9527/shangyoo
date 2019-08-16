@@ -27,7 +27,7 @@ var run_worker = function () {
 
     // Worker 进程有一个http服务器
     http.Server((req, res) => {
-        // console.log(req)
+        console.log(req)
 
 
 
@@ -77,7 +77,8 @@ var run_master = function () {
     }
 
     // 启动 worker 并监听包含 notifyRequest 的消息
-    const numCPUs = require('os').cpus().length;
+    // const numCPUs = require('os').cpus().length;
+    var numCPUs = 1
     for (var i = 0; i < numCPUs; i++) {
         cluster.fork();
     

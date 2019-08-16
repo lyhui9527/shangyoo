@@ -2,10 +2,10 @@
 
 var mysql = require('/root/code/node_modules/mysql');
 var connection = mysql.createConnection({
-    host: '192.168.10.238',
+    host: '192.168.16.102',
     user: 'root',
     password: '123456',
-    database: 'kf'
+    database: 'hxddz_party'
     // database: 'test'
 });
 
@@ -16,7 +16,7 @@ const cluster = require('cluster');
 var funmax = 10000;
 var pos = 0;
 var start = new Date();
-funmax = 40000
+funmax = 20
 
 
 
@@ -53,7 +53,15 @@ var strcat = function (col, row) {
         var paymoney = Math.floor(Math.random() * 100000);
         var grade = Math.floor(Math.random() * 1000);
         var mobiletype = Math.floor(Math.random() * 3);
-        var tempdata = [phone, paymoney, grade, mobiletype];
+        var uid = pos*100000+(i+1);
+         var chn= '02'
+        var  date = '2019-02-19'
+        if(cluster.worker.id ==1 ){
+            date = '2019-02-18'
+            }
+        
+        var tempdata = [uid, chn, date];
+
         for (var j = 0; j < col; j++) {
             retcat.data[p++] = tempdata[j]
 
@@ -73,9 +81,9 @@ var funsyn = function () { //同步处理，更加内存不会挤爆
     var paymoney = Math.floor(Math.random() * 100000);
     var grade = Math.floor(Math.random() * 1000);
     var mobiletype = Math.floor(Math.random() * 3);
-    var data = strcat(4, 2000)
+    var data = strcat(3, 100000)
 
-    var sql = "INSERT INTO nysycallingup (`mobile`, `paymoney`, `grade`,`mobiletype`) VALUES" + data.str
+    var sql = "INSERT INTO `hxddz_party`.`temp_stat_spring_festival_2019` (`uid`, `chn`, `date`) VALUES " + data.str
 
     // sql ="SELECT DATE_ADD('2018-04-01 5',INTERVAL FLOOR(RAND()* 90) DAY ) as a"
 
@@ -90,7 +98,6 @@ var funsyn = function () { //同步处理，更加内存不会挤爆
         console.log(result);
 
         if (pos == funmax) {
-            s
             connection.end();
             console.log('time', new Date().valueOf() - start.valueOf())
         }
@@ -108,7 +115,7 @@ var run_worker = function () {
 
 var run_master = function () {
     //   const numCPUs = require('os').cpus().length;
-    for (var i = 0; i < 5; i++) {
+    for (var i = 0; i < 2; i++) {
         cluster.fork();
     }
 
