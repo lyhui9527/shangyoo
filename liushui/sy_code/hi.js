@@ -8,12 +8,13 @@
 //2019-04-01
 var moment = require('moment')
 
-var s = moment('2019-06-15')
+var s = moment('2019-07-01')
 
-for (var i = 0; i >= -300; i--) {
-	var d = moment(s).add(i, 'days').format('YYYYMMDD')
-	console.log('CREATE TABLE IF not exists  stat_ad_dpay_s_result_'+d," LIKE  stat_ad_dpay_s_result_20190808; ")
-	// console.log("/root/code/tools/newdb_tools/hxddz.bs/union_ad_dgm_set.js ",d)
+for (var i = 0; i >= -120; i--) {
+	var d = moment(s).add(i, 'days').format('YYYY-MM-DD')
+	// console.log('CREATE TABLE IF not exists  stat_ad_dpay_s_result_'+d," LIKE  stat_ad_dpay_s_result_20190808; ")
+	//DELETE FROM  stat_ad_dgm_result_20190421  WHERE chn in ('10007','10006') AND adid != 'all'; 
+	console.log("/root/code/tools/newdb_tools/hxddz.bs/ss_gm_liushui_stream.sh  ",d," | /root/code/tools/newdb_tools/hxddz.bs/ss_dgmp.js ",d)
 }
 
 
@@ -45,3 +46,7 @@ for (var i = 0; i >= -300; i--) {
 // http://kfd2.shangyoo.com/running/monitor/insert_data_to_monitor_conf?monitor_type=mini_prebuy_chn&name=restart_time
 
 // http://kfd2.shangyoo.com/running/monitor/insert_data_to_monitor_conf?monitor_type=mini_prebuy_chn&name=is_open
+
+
+
+

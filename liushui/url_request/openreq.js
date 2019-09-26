@@ -23,7 +23,7 @@ var qs  = require('querystring')
 */
 
 
-var count = 2
+var count = 3
 var pos = 0
 var random = Math.ceil(Math.random() * 100000)
 var pw = 0
@@ -35,13 +35,13 @@ url = 'https://activityhxddz.syyx.com/get_can_draw_time?data=XUM2zeoyqjDptM1OoKm
 
 url = 'http://party3hxddz.syyx.com/5_anniversary_signin/init' 
 url = 'http://prebuy.hxddz.syyx.cn/pre_buy_request?pf_id=vivo&pk_id=40008&pay_id=129&app_id=1404&server_id=4&account=&third_account=1GA8wVpLXhtGZu_IwDPxSEQr1_ie4CTCyLpOwrHezPc&role_id=3100124388&item_id=155&item_name=9.8%E4%B8%87%E9%87%91%E8%B1%86&request_id=0&item_count=1&item_price=190&total_price=190&currency=RMB&iccid=%00%00%00%00%00%00&imsi=&imei=123456&ip=1.70.240.71&isp=0&code=&net=&province=00&ver=198&room=1301&prop_id=0&access_token=&extra=&sign=5969d9397a5b191e8fda7c7a1fc9a23b'
-url = 'https://party3hxddz.syyx.com/silk_bag/gets'
+url = 'https://party3hxddz.syyx.com/newuser_signin1/draw'
 
 var data_post =  { appid: '1404',
   ver: '3.10.180',
   imei: '862856040459879',
-  chn: '10006',
-  uid: '123456',
+  chn: '13001',
+  uid: '288138154',
   nickname: '1158984754',
   sex: '1',
   beans: '0',
@@ -55,7 +55,7 @@ var data_post =  { appid: '1404',
   item_id:3,
 award_index: 6,
   servercode: '500',
-  sign: 'd7b223c2e4a4be4d964f9cb3f329e1a0',
+  sign: 'f80cd34f8cfc4a6eb8441f9e70555e62',
   gameid: '0|1|2|8' }
 
 
