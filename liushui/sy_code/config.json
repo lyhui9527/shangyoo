@@ -1,0 +1,34 @@
+{
+    "channel": [
+        "ceping"
+    ],
+    "commnet": "oppo插屏额外规则",
+    "id": 1,
+    "rules": [
+        {
+            "conds": [
+                1,
+                2,
+                3,
+                4
+            ],
+            "scene_rule": [
+                {
+                    "count": -10,
+                    "scene": 11
+                },
+                {
+                    "count": 10,
+                    "scene": 12
+                },
+                {
+                    "count": 10,
+                    "scene": 13
+                }
+            ],
+            "sort_id": 1,
+            "type_count": 20
+        }
+    ],
+    "type": 1
+}

@@ -35,7 +35,7 @@ url = 'https://activityhxddz.syyx.com/get_can_draw_time?data=XUM2zeoyqjDptM1OoKm
 
 url = 'http://party3hxddz.syyx.com/5_anniversary_signin/init' 
 url = 'http://prebuy.hxddz.syyx.cn/pre_buy_request?pf_id=vivo&pk_id=40008&pay_id=129&app_id=1404&server_id=4&account=&third_account=1GA8wVpLXhtGZu_IwDPxSEQr1_ie4CTCyLpOwrHezPc&role_id=3100124388&item_id=155&item_name=9.8%E4%B8%87%E9%87%91%E8%B1%86&request_id=0&item_count=1&item_price=190&total_price=190&currency=RMB&iccid=%00%00%00%00%00%00&imsi=&imei=123456&ip=1.70.240.71&isp=0&code=&net=&province=00&ver=198&room=1301&prop_id=0&access_token=&extra=&sign=5969d9397a5b191e8fda7c7a1fc9a23b'
-url = 'https://party3hxddz.syyx.com/newuser_signin1/draw'
+url = 'https://activityhxddz.syyx.com/get_can_draw_time?data=z2xZIqJqi7DK1o%2Bzfnbygg9YPwIJEXap72gtkcgLYoc6ZIzSsC0VkuvU5vGWVeLSKaVwJmce5f1DpiCyZ2hwmd6H9t4Tl905XERO7yEj81w%3D&sign=3922dcbdc79272789d514e5f6a98d22e'
 
 var data_post =  { appid: '1404',
   ver: '3.10.180',
@@ -58,10 +58,47 @@ award_index: 6,
   sign: 'f80cd34f8cfc4a6eb8441f9e70555e62',
   gameid: '0|1|2|8' }
 
+  data_post = {
+    data:'Tq%2FEEV2v2Ti1VvnJvmZd%2Fh55BQeqRCKCqZLeQq%2FYq4j1GgB8dwww8bDliwj%2BxsCi1QlF%2BZd1GMvi1g81sJrJ7w%3D%3D',
+    sign:'3922dcbdc79272789d514e5f6a98d22e'
+  }
+
+
+data_post['data'] = 'z2xZIqJqi7DK1o%2Bzfnbygg9YPwIJEXap72gtkcgLYoc6ZIzSsC0VkuvU5vGWVeLSKaVwJmce5f1DpiCyZ2hwmd6H9t4Tl905XERO7yEj81w%3D'
+http://activity.hxddz.syyx.com/get_can_draw_time?data=&sign=3922dcbdc79272789d514e5f6a98d22e
 
 var j = request.jar()
 var cookie = request.cookie('nycs_stat=')
 j.setCookie(cookie, url);
+
+
+
+
+
+
+
+
+var r=Math.random()
+var rr = '&r=' + r 
+
+
+// console.log(url+rr)
+ request({
+        url: url+rr,
+        // url: 'http://192.168.1.60:8000?request='+cluster.worker.id+'&pw='+pw,
+        method: "GET",
+        json: true,
+        //  headers: { "content-type": "application/json" },
+        // body: JSON.stringify(data_post)
+    }, function (err, req, body) {
+
+console.log(body)
+    });
+
+
+
+
+/*
 
 
 var normal_main = function () {
@@ -110,7 +147,7 @@ var normal_main = function () {
              console.log('pos-----',pos)
         request({
         url: url,     
-        method: "POST",
+        method: "GET",
         json: true,
         headers: { "content-type": "application/json" },
         body: JSON.stringify(data_post)
@@ -191,3 +228,4 @@ if (cluster.isMaster) {       //使用多进程方式请求
 
     run_worker();
 }
+*/

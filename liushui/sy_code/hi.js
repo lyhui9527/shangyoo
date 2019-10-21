@@ -8,9 +8,9 @@
 //2019-04-01
 var moment = require('moment')
 
-var s = moment('2019-07-01')
+var s = moment('2019-02-01')
 
-for (var i = 0; i >= -120; i--) {
+for (var i = 0; i >= -32; i--) {
 	var d = moment(s).add(i, 'days').format('YYYY-MM-DD')
 	// console.log('CREATE TABLE IF not exists  stat_ad_dpay_s_result_'+d," LIKE  stat_ad_dpay_s_result_20190808; ")
 	//DELETE FROM  stat_ad_dgm_result_20190421  WHERE chn in ('10007','10006') AND adid != 'all'; 
