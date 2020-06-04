@@ -7,7 +7,7 @@ var readline = require('readline')
 
 var file = {
     'file': 'in',  //file path
-    'row': 3000000,
+    'row': 5000000,
     'unit': 2000000
 }
 
@@ -17,13 +17,13 @@ var createfile = function (all) {
     var data = {
         'name': null,
         'value': null
+
     }
     create_writer.on('finish', function () {
         console.log('create_ok')
     })
     var data = unit_write_data(all.row)
     create_writer.write(data)
-
     // next(1)
     // function next(i) {
     //     if (i > all.row) {
@@ -58,7 +58,7 @@ function unit_write_data(unit) {
     for (let i = 0; i < unit; i++) {
         // name = 'name=' + 123654789 //Math.ceil(Math.random() * 100000000)  //fun slow
         // value = 'cos=' + 963258741 //Math.ceil(Math.random() * 100000000)  //fun slow
-        value = Math.ceil(Math.random() * 100000000)
+        value = Math.ceil(Math.random() * 100000000) + '1111111111111111111111111111111111111111111111111111111111111'
         ret.push(value)
     }
     return ret.join('\n')

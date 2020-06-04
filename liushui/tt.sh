@@ -1,12 +1,21 @@
 #!/bin/bash
-curl 'http://gameapi.hxddz.syyx.cn:8891/get_rank_list?aid=17&sid=1&ch=13001&ver=100&tid=0&uid=0&date=2018-05-07&start=0&end=1000'      >> in
-curl 'http://gameapi.hxddz.syyx.cn:8891/get_rank_list?aid=17&sid=1&ch=13001&ver=100&tid=0&uid=0&date=2018-05-07&start=1000&end=2000'   >> in
-curl 'http://gameapi.hxddz.syyx.cn:8891/get_rank_list?aid=17&sid=1&ch=13001&ver=100&tid=0&uid=0&date=2018-05-07&start=2000&end=3000'   >> in
-# curl 'http://gameapi.hxddz.syyx.cn:8891/get_rank_list?aid=17&sid=1&ch=13001&ver=100&tid=0&uid=0&date=2018-04-29&start=3000&end=4000'   >> in
-# curl 'http://gameapi.hxddz.syyx.cn:8891/get_rank_list?aid=17&sid=1&ch=13001&ver=100&tid=0&uid=0&date=2018-04-29&start=4000&end=5000'   >> in
-# curl 'http://gameapi.hxddz.syyx.cn:8891/get_rank_list?aid=17&sid=1&ch=13001&ver=100&tid=0&uid=0&date=2018-04-29&start=5000&end=6000'   >> in
-# curl 'http://gameapi.hxddz.syyx.cn:8891/get_rank_list?aid=17&sid=1&ch=13001&ver=100&tid=0&uid=0&date=2018-04-29&start=6000&end=7000'   >> in
-# curl 'http://gameapi.hxddz.syyx.cn:8891/get_rank_list?aid=17&sid=1&ch=13001&ver=100&tid=0&uid=0&date=2018-04-29&start=7000&end=8000'  >> in
-# curl 'http://gameapi.hxddz.syyx.cn:8891/get_rank_list?aid=17&sid=1&ch=13001&ver=100&tid=0&uid=0&date=2018-04-29&start=8000&end=9000'   >> in
-# curl 'http://gameapi.hxddz.syyx.cn:8891/get_rank_list?aid=17&sid=1&ch=13001&ver=100&tid=0&uid=0&date=2018-04-29&start=9000&end=10000'   >> in
+# sday=$1
+# eday=$2
+# eday=`date -d "$eday +1 day" +%Y-%m-%d`
+# while [ $sday != $eday ]
+# do
+# echo xxxxx.js $sday
+# sday=`date -d "$sday +1 day" +%Y-%m-%d`
+# done
+
+
+min=`date -d "$1" +%M`
+min2=$min
+if [ ${min: 0: 1} = 0 ]
+then 
+    min2=${min: 1: 1}
+fi
+ day=`date -d "$1 " +%Y-%m-%d' '%H`:$(($min2-$min2%5))
+
+ echo $day
 

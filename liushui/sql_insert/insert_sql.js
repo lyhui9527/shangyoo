@@ -1,11 +1,13 @@
 #!/root/code/tools/node/node4.x64
 
 var mysql = require('/root/code/node_modules/mysql');
+
 var connection = mysql.createConnection({
-    host: '192.168.10.238',
+    host: '192.168.16.102',
     user: 'root',
     password: '123456',
-    database: 'kf'
+    database: 'pdjs_kf',
+    // charset : ''
     // database: 'test'
 });
 
@@ -42,8 +44,9 @@ var func = function(count) { //分批次同步处理，同批次异步，更全�
         var data = [s[Math.floor(Math.random() * 3)], Math.floor(Math.random() * 100), c[Math.floor(Math.random() * 3)],
             125, 5, e[Math.floor(Math.random() * 2)], today, re[p_re], 1000, p[p_re], '2', '3'
         ];
-        var sql = "INSERT INTO gm_bean_flow (server_id, uid, channel, version, account_type, event, occur_time,`change`,new_value, param, ext1, ext2)" +
-            " VALUES( ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? )"
+        // var sql = "INSERT INTO gm_bean_flow (server_id, uid, channel, version, account_type, event, occur_time,`change`,new_value, param, ext1, ext2)" +
+        //     " VALUES( ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? )"
+
 
 
         connection.query(sql, data, function(err, result) {
@@ -157,7 +160,7 @@ var funsyn = function() { //同步处理，更加内存不会挤爆
     });
 }
 
-funsyn();
+// funsyn();
 
 
 var fun = function() { //异步处理，更快
@@ -176,12 +179,50 @@ var fun = function() { //异步处理，更快
 
         sql = "INSERT INTO fifa18_bet_flow (`sid`, `chn`, `ver`, `uid`, `imei`, `beans`, `btype`, `mid`, `binfo`, `rate`,  `create_at`)" +
             " VALUES(? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ?   )";
+     sql = `SELECT
+    'create_problem_log' AS type,
+    account AS operator,
+    date_format(
+        create_at,
+        '%Y-%m-%d %H:%i:%s'
+    ) AS create_at,
+    'create_problem_log' AS log_type
+FROM
+    create_problem_log
+WHERE
+    p_id = '34000000131589187568'
+UNION ALL
+    SELECT
+        type,
+        operator,
+        date_format(
+            create_at,
+            '%Y-%m-%d %H:%i:%s'
+        ) AS create_at,
+        'update_ask_log' AS log_type
+    FROM
+        update_ask_log
+    WHERE
+        p_id = '34000000131589187568'
+    UNION ALL
+        SELECT
+            type,
+            operator,
+            date_format(
+                create_at,
+                '%Y-%m-%d %H:%i:%s'
+            ) AS create_at,
+            'update_reply_log' AS log_type
+        FROM
+            update_reply_log
+        WHERE
+            p_id = '34000000131589187568';`
 
         connection.query(sql, data, function(err, result) {
             // console.log(pos, 'next: ', data);
             if (err) console.log(err)
 
-            //console.log('result: ', result);
+            console.log('result: ', result);
 
         });
 
@@ -189,7 +230,7 @@ var fun = function() { //异步处理，更快
     console.log('time2:', new Date().valueOf() - fstart.valueOf())
 
 }
-//fun()
+fun()
 
 
 

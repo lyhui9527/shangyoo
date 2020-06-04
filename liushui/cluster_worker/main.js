@@ -22,25 +22,9 @@ const fs = require('fs');
 
 var run_worker = function () {
 
-
-
-
     // Worker 进程有一个http服务器
     http.Server((req, res) => {
         console.log(req)
-
-
-
-        // if(cluster.worker.id ==2){
-        //     setTimeout(function(){
-        //         console.log(cluster.worker.id,"sleep")
-        //     },2000)
-
-        // }else{
-        //     setTimeout(function(){
-        //         console.log(cluster.worker.id,"sleep")
-        //     },100) 
-        // }
         console.log(cluster.worker.id, "sleep ", req.url)
         var data = req.url.toString().split(/[?&]/)
         var arg = {}

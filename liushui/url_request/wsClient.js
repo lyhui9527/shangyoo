@@ -65,7 +65,7 @@
 
             if(i<200){
                 // ws[i] = new WebSocket('ws://119.145.139.71:12306')
-                ws[i] = new WebSocket('ws://192.168.1.60:12306')
+                ws[i] = new WebSocket('ws://192.168.16.105:8899')
                 wscb(ws[i], i);
                 i++
             }
@@ -80,7 +80,7 @@
             //     ws[i].close()
 
             // }
-        }, 500)
+        }, 1000)
 
     }
     run();

@@ -1,9 +1,9 @@
 #!/bin/bash
 NODE='/root/node-v8.11.1-linux-x64/bin/node'
 
-
-
-curl 'http://127.0.0.1:8817/start?date=2019-10-08&rocket=gm,gm2,gm3,gm4,gm_hv,gm_hv2,gm_hv4,gm_hv3'
+两种跑数据的脚本
+1、/root/code/tools/newdb_tools/ss_launcher.js  --path=/root/code/tools/newdb_tools/hxddz.bs  --log=/home/data/log/hxddz --date=2019-10-08 --src=login  --topo='dau'
+2、curl 'http://127.0.0.1:8817/start?date=2019-10-08&rocket=gm,gm2,gm3,gm4,gm_hv,gm_hv2,gm_hv4,gm_hv3'
 
 
 04
