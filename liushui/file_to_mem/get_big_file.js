@@ -78,7 +78,7 @@ function getSpentTime() {
 
 readLine(inputFile).go(function(data, next) {
     counter++;
-    output.write(data, next);
+    output.write("('"+data+"'),", next);
     if (counter % 10000 === 0) {
         printSpeedInfo();
     }

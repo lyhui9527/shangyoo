@@ -1,0 +1,76 @@
+{
+    "ad_reward": {
+        "name": "ad_reward",
+        "type": "table",
+        "fields": {
+            "id": {
+                "name": "ID",
+                "type": "number",
+                "range": {
+                    "edit_type": "number_read_only",
+                }
+            },
+            "name": {
+                "name": "备注",
+                "type": "string",
+                range: {
+                    edit_type: "string"
+                }
+            },
+            "times_reward": {
+                "name": "奖励配置",
+                "type": "table",
+                "from": ":times_ext"
+            }
+        }
+    },
+
+    "times_ext": {
+        "name": "times_ext",
+        "type": "table",
+        "fields": {
+            "times": {
+                "name": "观看次数",
+                "type": "number",
+                "range": {
+                    edit_type: 'number_delete',
+                }
+            },
+            "rewards": {
+                "name": "道具配置",
+                "type": "table",
+                "from": ":ext",
+            }
+        }
+    },
+
+    "ext": {
+        "name": "ext",
+        "type": "table",
+        "fields": {
+            "prop_id": {
+                "name": "道具id",
+                "type": "number",
+                "from":{
+                    "table": 'props.json',
+                    "value": 'props_id',
+                    "show": {
+                        "fn": (id, name) => `(${id})${name}`,
+                        "args": ["props_id", "props_name"]
+                    }
+                },
+                range: {edit_type: 'select_delete'}
+            },
+            "min_num": {
+                "name": "最小数量",
+                "type": "number",
+                range: {edit_type: "number"}
+            },
+            "max_num": {
+                "name": "最大数量",
+                "type": "number",
+                range: {edit_type: "number"}
+            }
+        }
+    }
+}

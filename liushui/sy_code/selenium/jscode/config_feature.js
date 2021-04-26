@@ -3,13 +3,13 @@ var webdriver = require('selenium-webdriver'),
     until = webdriver.until;
 
 
+// var driver = new webdriver.Builder().forBrowser('internet explorer').build();
 var driver = new webdriver.Builder().forBrowser('chrome').build();
-
 driver.get('http://config.hxddz.shangyoo.com/login');
 
-driver.findElement(By.id('nick_name')).sendKeys('pttest');
-driver.findElement(By.id('password')).sendKeys('222222');
-driver.findElement(By.id('login_confirm')).click(); 
+// driver.findElement(By.id('nick_name')).sendKeys('pttest');
+// driver.findElement(By.id('password')).sendKeys('222222');
+// driver.findElement(By.id('login_confirm')).click(); 
 
 
 
@@ -46,22 +46,22 @@ driver.executeScript('window.open("http://config.hxddz.shangyoo.com/running/init
 driver.executeScript('window.open("http://config.hxddz.shangyoo.com/running/init/hx?sid=1&item_name=unite_fwin_user_type&item_showname=首胜见面礼用户类型&has_modal=false")')
 driver.executeScript('window.open("http://config.hxddz.shangyoo.com/running/init/hx?sid=1&item_name=unite_rpkt&item_showname=异业红包配置&has_modal=false")')
 driver.executeScript('window.open("http://config.hxddz.shangyoo.com/running/init/hx?sid=1&item_name=unite_wel_conf&item_showname=迎新见面礼总配置&has_modal=false")')
-// driver.executeScript('window.open("http://config.hxddz.shangyoo.com/running/init/hx?sid=1&item_name=vouchers_provide&item_showname=礼包发放配置&has_modal=false")')
+driver.executeScript('window.open("http://config.hxddz.shangyoo.com/running/init/hx?sid=1&item_name=vouchers_provide&item_showname=礼包发放配置&has_modal=false")')
 
 
 
-//   driver.executeScript('window.open("http://config.hxddz.shangyoo.com/running/init/hl?sid=2&item_name=anti_addiction_config&item_showname=实名认证配置&has_modal=false")')
-//   driver.executeScript('window.open("http://config.hxddz.shangyoo.com/running/init/hl?sid=2&item_name=anti_addiction_gameover&item_showname=实名认证牌局结束推荐&has_modal=false")')
-//   driver.executeScript('window.open("http://config.hxddz.shangyoo.com/running/init/hl?sid=2&item_name=bankruptcy_room_user_type&item_showname=新破产房间用户类型&has_modal=false")')
-//   driver.executeScript('window.open("http://config.hxddz.shangyoo.com/running/init/hl?sid=2&item_name=client_ui_new&item_showname=新UI开关配置&has_modal=false")')
-//   driver.executeScript('window.open("http://config.hxddz.shangyoo.com/running/init/hl?sid=2&item_name=exchange_user_type&item_showname=兑奖中心玩家配置&has_modal=false")')
-//   driver.executeScript('window.open("http://config.hxddz.shangyoo.com/running/init/hl?sid=2&item_name=expand_bean_user_type&item_showname=金豆膨胀条件配置&has_modal=false")')
-//   driver.executeScript('window.open("http://config.hxddz.shangyoo.com/running/init/hl?sid=2&item_name=game_layout&item_showname=游戏大厅布局配置&has_modal=false")')
-//   driver.executeScript('window.open("http://config.hxddz.shangyoo.com/running/init/hl?sid=2&item_name=game_promote_config&item_showname=游戏推广配置&has_modal=false")')
-//   driver.executeScript('window.open("http://config.hxddz.shangyoo.com/running/init/hl?sid=2&item_name=game_rule_channel&item_showname=游戏渠道属性&has_modal=false")')
-//   driver.executeScript('window.open("http://config.hxddz.shangyoo.com/running/init/hl?sid=2&item_name=login_target_user&item_showname=登录推荐匹配配置&has_modal=false")')
-//   driver.executeScript('window.open("http://config.hxddz.shangyoo.com/running/init/hl?sid=2&item_name=new_robot_rule&item_showname=新机器人子规则配置&has_modal=false")')
-//   driver.executeScript('window.open("http://config.hxddz.shangyoo.com/running/init/hl?sid=2&item_name=panic_buy&item_showname=限量抢购配置&has_modal=false")')
-//   driver.executeScript('window.open("http://config.hxddz.shangyoo.com/running/init/hl?sid=2&item_name=prop_deduction&item_showname=道具抵扣配置&has_modal=false")')
-//   driver.executeScript('window.open("http://config.hxddz.shangyoo.com/running/init/hl?sid=2&item_name=rpkt_user_type&item_showname=用户条件类型配置&has_modal=false")')
-//   driver.executeScript('window.open("http://config.hxddz.shangyoo.com/running/init/hl?sid=2&item_name=vouchers_provide&item_showname=礼包发放配置&has_modal=false")')
+  driver.executeScript('window.open("http://config.hxddz.shangyoo.com/running/init/hl?sid=2&item_name=anti_addiction_config&item_showname=实名认证配置&has_modal=false")')
+  driver.executeScript('window.open("http://config.hxddz.shangyoo.com/running/init/hl?sid=2&item_name=anti_addiction_gameover&item_showname=实名认证牌局结束推荐&has_modal=false")')
+  driver.executeScript('window.open("http://config.hxddz.shangyoo.com/running/init/hl?sid=2&item_name=bankruptcy_room_user_type&item_showname=新破产房间用户类型&has_modal=false")')
+  driver.executeScript('window.open("http://config.hxddz.shangyoo.com/running/init/hl?sid=2&item_name=client_ui_new&item_showname=新UI开关配置&has_modal=false")')
+  driver.executeScript('window.open("http://config.hxddz.shangyoo.com/running/init/hl?sid=2&item_name=exchange_user_type&item_showname=兑奖中心玩家配置&has_modal=false")')
+  driver.executeScript('window.open("http://config.hxddz.shangyoo.com/running/init/hl?sid=2&item_name=expand_bean_user_type&item_showname=金豆膨胀条件配置&has_modal=false")')
+  driver.executeScript('window.open("http://config.hxddz.shangyoo.com/running/init/hl?sid=2&item_name=game_layout&item_showname=游戏大厅布局配置&has_modal=false")')
+  driver.executeScript('window.open("http://config.hxddz.shangyoo.com/running/init/hl?sid=2&item_name=game_promote_config&item_showname=游戏推广配置&has_modal=false")')
+  driver.executeScript('window.open("http://config.hxddz.shangyoo.com/running/init/hl?sid=2&item_name=game_rule_channel&item_showname=游戏渠道属性&has_modal=false")')
+  driver.executeScript('window.open("http://config.hxddz.shangyoo.com/running/init/hl?sid=2&item_name=login_target_user&item_showname=登录推荐匹配配置&has_modal=false")')
+  driver.executeScript('window.open("http://config.hxddz.shangyoo.com/running/init/hl?sid=2&item_name=new_robot_rule&item_showname=新机器人子规则配置&has_modal=false")')
+  driver.executeScript('window.open("http://config.hxddz.shangyoo.com/running/init/hl?sid=2&item_name=panic_buy&item_showname=限量抢购配置&has_modal=false")')
+  driver.executeScript('window.open("http://config.hxddz.shangyoo.com/running/init/hl?sid=2&item_name=prop_deduction&item_showname=道具抵扣配置&has_modal=false")')
+  driver.executeScript('window.open("http://config.hxddz.shangyoo.com/running/init/hl?sid=2&item_name=rpkt_user_type&item_showname=用户条件类型配置&has_modal=false")')
+  driver.executeScript('window.open("http://config.hxddz.shangyoo.com/running/init/hl?sid=2&item_name=vouchers_provide&item_showname=礼包发放配置&has_modal=false")')

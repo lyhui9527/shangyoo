@@ -151,7 +151,7 @@ mount -t nfs  172.21.0.195:/home/data/hxddz/dadc.bs        /home/data/hxddz/dadc
 mount -t nfs  172.21.0.195:/home/data/hxddz/dadu.1.bs        /home/data/hxddz/dadu.1.bs
 mount -t nfs  172.21.0.195:/home/data/hxddz/dadu.1s.bs        /home/data/hxddz/dadu.1s.bs
 mount -t nfs  172.21.0.195:/home/data/hxddz/dadu.2.bs        /home/data/hxddz/dadu.2.bs
-mount -t nfs  172.21.0.195:/home/data/hxddz/dadu.2s.bs        /home/data/hxddz/dadu.2s.bs
+mount -t nfs  172.21.0.195:/home/data/hxddz/dadu.2s.bs        /home/data/hxddz/dadu.2s.bs/file_to_mem/out
 mount -t nfs  172.21.0.195:/home/data/hxddz/dadu.3.bs        /home/data/hxddz/dadu.3.bs
 mount -t nfs  172.21.0.195:/home/data/hxddz/dnu.bs        /home/data/hxddz/dnu.bs
 mount -t nfs  172.21.0.195:/home/data/hxddz/rtadc.1.bs        /home/data/hxddz/rtadc.1.bs
@@ -165,3 +165,41 @@ mount -t nfs 172.21.0.148:/home/data/hxddz/dnu.json/   /data/home/data/hxddz/dnu
 
 
 curl 'http://127.0.0.1:1817/start?date=2019-10-08&rocket=gm'
+
+
+/root/code/tools/newdb_tools/hxddz.bs/ss_dn_30d_imei_androidid_oaid_stream.sh   $day  | /root/code/tools/newdb_tools/hxddz.bs/ss_dn_30d_imei_androidid_oaid.js  $day
+
+
+
+
+#!/bin/bash
+
+if [ x$2 == x ]
+then
+    s_day=$1
+    e_day=$1
+else
+    s_day=$2
+    e_day=$2
+fi
+
+if [ x$1 == x ]
+then
+    s_day=`date -d"-1 day" +%Y-%m-%d`
+    e_day=`date -d"-1 day" +%Y-%m-%d`
+else
+    s_day=$1
+
+fi
+
+first=$s_day
+second=$e_day
+
+while [ `date -d $first +%s` -le `date -d $second +%s` ]
+do
+
+/root/code/tools/db_tools/hxddz/ad/toutiao_dauly_report.sh $first
+
+first=`date -d "$first +1 day" +%Y-%m-%d`
+done
+

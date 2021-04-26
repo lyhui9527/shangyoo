@@ -1,4 +1,5 @@
 #!/root/code/tools/node/node7
+//for activity.hxddz.syyx.com proxy type
 
 const exec = require('child_process').exec
 

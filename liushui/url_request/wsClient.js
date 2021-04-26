@@ -3,7 +3,8 @@
 
 
 
-; $(function () {
+;
+$(function() {
 
 
 
@@ -19,70 +20,102 @@
     data.message = 'client';
     data.video_name = '2315'
 
-    var wscb = function (ws, i) {
 
 
+    var wscb = function(ws, i) {
 
+        ws.onmessage = function(msg) {
 
-        ws.onmessage = function (msg) {
-            var ret = JSON.parse(msg.data)
-            // console.log(ret.data);
+            console.log(msg);
 
-            $('#con').append("<p>" + ret.data.server_name + "</p>")
+            // $('#con').append("<p>" + ret.data.server_name + "</p>")
         }
 
-        ws.onclose = function () {
+        ws.onclose = function() {
             alert('connect fail')
         }
 
-        ws.onerror = function (e) {
+        ws.onerror = function(e) {
 
             alert('err')
 
         }
 
-        ws.onopen = function () {
-            $('#con').append("<p>" + i + "</p>")
-            // ws.send(JSON.stringify(data))
+        ws.onopen = function() {
+            // $('#con').append("<p>" + i + "</p>")
+            ws.send(JSON.stringify({ name: "verify", data: i }))
         }
     }
 
 
     var ws = [];
+    var maxws = 20
+    var singlenum = 500
 
-    var run = function () {
 
-        // for (var i = 0; i < 500; i++) {
-        //     // ws[i] = new WebSocket('ws://192.168.1.60:12306')
-        //     ws[i] = new WebSocket('ws://119.145.139.71:12306')
-        //     wscb(ws[i], i);
+    var run = function() {
 
-        // }
-        var i = 0
+        var i = 300
+        
+        var ss = setInterval(function() {
+            ws[i] = new WebSocket('wss://us.syyx.com:443/money_money/player')
+            wscb(ws[i], i)
+            i++
+            if (i > maxws) {
 
-        setInterval(function () {
-            // i = i %1000;
 
-            if(i<200){
-                // ws[i] = new WebSocket('ws://119.145.139.71:12306')
-                ws[i] = new WebSocket('ws://192.168.16.105:8899')
-                wscb(ws[i], i);
-                i++
+
+                setTimeout(function() {
+                clearInterval(ss)
+
+                }, 6000)
+
+
+                console.log('create man ok')
             }
-            // data.server_name = i;
-            // console.log(ws[i].readyState)
-            // if (ws[i]) {
 
-            //     ws[i].send(JSON.stringify(data))
-            // }
-       
-            // if (i % 10 == 0) {
-            //     ws[i].close()
 
-            // }
-        }, 1000)
+        }, 100)
+
+
+
+
+        // i = 1
+        // var sss = setInterval(function() {
+        //   
+        //     i++
+        //     if (i > maxws) {
+        //         clearInterval(sss)
+        //         console.log('connect server ok')
+        //     }
+
+        // }, 100)
+
+        // setTimeout(function() {
+        //     for (var i = 1; i <= maxws; i++) {
+        //         singlerun(ws[i])
+        //     }
+
+        // }, 5000)
+
+
 
     }
+
+    var singlerun = function(wsi) {
+        let i = 0
+        var ss = setInterval(function() {
+            if (i < singlenum) {
+                i++
+                wsi.send(JSON.stringify({ data: i, name: "score" }))
+
+            } else {
+                clearInterval(ss)
+                console.log()
+            }
+        }, 50)
+    }
+
     run();
 
 });

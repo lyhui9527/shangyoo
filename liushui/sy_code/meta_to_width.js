@@ -73,9 +73,9 @@ var handle_meta = function (mainmeta, name) {
     console.log(JSON.stringify(result_obj))
 }
 
- var path = 'D:\\code\\tools\\hxddz_config\\1\\'
-path = 'D:\\code\\tools\\hxddz_config\\1\\'
-var allmeta = ['acct_chan_conf']
+ var path = 'D:\\code\\tools\\hxddz_config\\4\\'
+path = 'D:\\code\\tools\\hxddz_config\\4\\'
+var allmeta = ['game_ad']
 var result_obj = {}
 var metaparams = null
 

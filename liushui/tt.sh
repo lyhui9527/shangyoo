@@ -9,13 +9,3 @@
 # done
 
 
-min=`date -d "$1" +%M`
-min2=$min
-if [ ${min: 0: 1} = 0 ]
-then 
-    min2=${min: 1: 1}
-fi
- day=`date -d "$1 " +%Y-%m-%d' '%H`:$(($min2-$min2%5))
-
- echo $day
-

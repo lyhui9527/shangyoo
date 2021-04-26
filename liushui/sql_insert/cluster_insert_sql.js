@@ -1,11 +1,17 @@
-#!/root/code/tools/node/node4.x64
+var os = require('os')
+var patt = /linux/i
+var father = 'D:'
+if (patt.test(os.type())) {
+    father = '/root'
+}
 
-var mysql = require('/root/code/node_modules/mysql');
+
+var mysql = require(father + '/code/node_modules/mysql');
 var connection = mysql.createConnection({
     host: '192.168.16.102',
     user: 'root',
     password: '123456',
-    database: 'hxddz_party'
+    database: 'yqqs_kf'
     // database: 'test'
 });
 
@@ -14,15 +20,15 @@ const cluster = require('cluster');
 
 
 //----------------------------------------------基础配置定义
-var funmax = 10000;   //每个进程进行多少轮
+var funmax = 100; //每个进程进行多少轮
 var pos = 0;
 var start = new Date();
-var max_worker = 1;  //多少个进程
-funmax = 1 
+var max_worker = 1; //多少个进程
+funmax = 100
 //----------------------------------------------基础配置定义
 
 
-var strcat = function(col, row) {  //col=需插入列数,row=每次组成多少行
+var strcat = function(col, row) { //col=需插入列数,row=每次组成多少行
     if (col < 0) {
         retrun
     }
@@ -45,7 +51,7 @@ var strcat = function(col, row) {  //col=需插入列数,row=每次组成多少�
     var p = 0;
     for (var i = 0; i < row; i++) {
 
-//---------------------------------------------------------数据定义
+        //---------------------------------------------------------数据定义
         var phone = Math.ceil(Math.random() * 1000000000000);
         var paymoney = Math.floor(Math.random() * 100000);
         var grade = Math.floor(Math.random() * 1000);
@@ -57,7 +63,7 @@ var strcat = function(col, row) {  //col=需插入列数,row=每次组成多少�
             date = '2019-02-18'
         }
         var tempdata = [uid, chn, date];
-//---------------------------------------------------------数据定义
+        //---------------------------------------------------------数据定义
 
         for (var j = 0; j < col; j++) {
             retcat.data[p++] = tempdata[j]
@@ -67,24 +73,68 @@ var strcat = function(col, row) {  //col=需插入列数,row=每次组成多少�
     return retcat
 } //链接value后面的？
 
+var multistr = function(row) {
+
+    var retcat = {
+        'str': '',
+        'data': []
+    }
 
 
+
+    var tempdata = [
+        1
+    ]
+
+
+
+    var substr = '';
+    substr = substr + '(?';
+    for (var i = 1; i < tempdata.length; i++) {
+        substr = substr + ', ?'
+    }
+    substr = substr + ')';
+    retcat.str = substr
+
+    for (var i = 1; i < row; i++) {
+        retcat.str = retcat.str + ',' + substr
+
+    }
+
+
+    for (var i = 0; i < row; i++) {       
+
+//------------------------------------------------------------------  //定义插入数据的具体内容
+
+        tempdata[0] = Math.ceil( Math.random() * 1000000000000000)
+        // tempdata[1] = i + 1
+        // tempdata[2] = Math.ceil( Math.random() * 4)
+
+//------------------------------------------------------------------
+
+        retcat.data = retcat.data.concat(tempdata)
+    }
+
+    return retcat
+}
 
 
 var funsyn = function() { //同步处理，更加内存不会挤爆
 
     var t = Math.floor(Math.random() * 3);
-    var phone = Math.ceil(Math.random() * 1000000000);
+    var phone = Math.ceil(Math.random() * 1000000000);    
     var paymoney = Math.floor(Math.random() * 100000);
     var grade = Math.floor(Math.random() * 1000);
     var mobiletype = Math.floor(Math.random() * 3);
-    var data = strcat(3, 100000) 
+    // var data = strcat(3, 100000) 
+    var data = multistr(10000)
+    var sql = "INSERT INTO `yqqs_kf`.`hw_lottery_card` (`card`)  VALUES" + data.str
 
-    var sql = "INSERT INTO `hxddz_party`.`temp_stat_spring_festival_2019` (`uid`, `chn`, `date`) VALUES " + data.str
     // sql ="SELECT DATE_ADD('2018-04-01 5',INTERVAL FLOOR(RAND()* 90) DAY ) as a"
+    // console.log(sql)
     connection.query(sql, data.data, function(err, result) {
 
-        if (err) console.log(err)
+        if (err) {console.log(err)}
         pos++
         console.log("cluster: ", cluster.worker.id, ' pos:', pos)
         if (pos < funmax) {
@@ -95,7 +145,7 @@ var funsyn = function() { //同步处理，更加内存不会挤爆
         if (pos == funmax) {
             connection.end();
             console.log('time', new Date().valueOf() - start.valueOf())
-        }
+         }
     });
 }
 

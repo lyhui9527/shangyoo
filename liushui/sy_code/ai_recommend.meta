@@ -1,0 +1,107 @@
+{
+	"ai_recommend": {
+		"name": "ai_recommend",
+		"type": "table",
+		"fields": {
+			"id": {
+				"name": "ID",
+				"range": {
+					"edit_type": "number_read_only"
+				},
+				"type": "number"
+			},
+			"channel": {
+                "name": "渠道列表",
+                "type": "array",
+                "from": {
+                    "table": "channels.json",
+                    "value": "channel_id",
+                    "show": "channel_name"
+                },
+                "range": {
+                    "array_type": "string",
+                    "edit_type": "select_delete",
+                    "show_type": "multiple"
+                }
+			},
+			"price_recommend": {
+				"name": "推荐配置",
+				"type": "table",
+				"from": ":child_price_recommend"
+			}
+		}
+	},
+	"child_price_recommend": {
+		"name": "child_price_recommend",
+		"type": "table",
+		"fields": {
+            "meet_ratio": {
+				"name": "满足ai推荐的比重",
+				"range": {
+                    "edit_type": "number_delete",
+                    "min": -1
+				},
+				"type": "number"
+			},
+            "is_open": {
+                "name": "是否开启ai推荐",
+                "range": {
+                    "edit_type": "switch"
+                },
+                "type": "number"
+            },
+			"req_scene": {
+                "name": "请求情景列表",
+                "range": {
+					"edit_type": "select_delete",
+                    "array_type": "number",
+                    "show_type": "multiple"
+                },
+                "from": {
+                    "table": "scene_pay_manager_all.json",
+                    "value": "scene_id",
+                    "show": {
+                        "fn": (id, name) => `(${id})${name}`,
+                        "args": ["scene_id", "scene_name"]
+                    }
+                },
+				"type": "array"
+			},
+			"scene_id": {
+				"name": "下单情景列表",
+				"range": {
+					"edit_type": "select_delete",
+                    "array_type": "number",
+                    "show_type": "multiple"
+                },
+                "from": {
+                    "table": "scene_pay_manager_all.json",
+                    "value": "scene_id",
+                    "show": {
+                        "fn": (id, name) => `(${id})${name}`,
+                        "args": ["scene_id", "scene_name"]
+                    }
+                },
+				"type": "array"
+			},
+			
+			"uid_division": {
+				"name": "uid除数",
+				"range": {
+                    "edit_type": "number",
+                    "min":0
+				},
+				"type": "number",
+				"deft": 100
+			},
+			"uid_tail": {
+				"name": "uid尾号列表",
+				"range": {
+					"edit_type": "number_delete",
+					"array_type": "number"
+				},
+				"type": "array"
+			}
+		}
+	}
+}
