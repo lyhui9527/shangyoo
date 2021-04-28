@@ -1,11 +1,7 @@
 #!/bin/bash
-# sday=$1
-# eday=$2
-# eday=`date -d "$eday +1 day" +%Y-%m-%d`
-# while [ $sday != $eday ]
-# do
-# echo xxxxx.js $sday
-# sday=`date -d "$sday +1 day" +%Y-%m-%d`
-# done
 
+echo [`date +'%Y-%m-%d %T'`]`ipcs -m |wc -lc`
+echo '/root/code/tools/newdb_tools/shm_leak.sh  clean'
+/root/code/tools/newdb_tools/shm_leak.sh  clean
+echo [`date +'%Y-%m-%d %T'`]' ok'`ipcs -m |wc -lc`
 
