@@ -7,7 +7,7 @@
 //2019-04-01
 var moment = require('moment')
 
-var s = moment('2021-03-19')
+var s = moment('2021-04-01')
 
 
 var sql = `
@@ -48,7 +48,7 @@ var deptid = [
 
 var str = ''
 var pos = 1
-for (var i = 0; i < 30; i++) {
+for (var i = 0; i < 40; i++) {
     var dd = moment(s).add(i*5, 'MINUTE').format('YYYY-MM-DD HH:mm:ss')
     var ddd = moment(s).add((i+1)*5, 'MINUTE').format('YYYY-MM-DD HH:mm:ss')
     var d = moment(s).add(i, 'days').format('YYYYMMDD')
@@ -117,7 +117,7 @@ str4 ='/root/code/tools/newdb_tools/hxddz.bs/ss_ios_ad_remain_mysql.js ' + d2
      // console.log('/root/code/tools/newdb_tools/hxddz.bs/ss_dn_30d_imei_androidid_oaid_stream.sh   $day  | /root/code/tools/newdb_tools/hxddz.bs/ss_dn_30d_imei_androidid_oaid.js  $day',)
      // console.log('/root/code/tools/newdb_tools/hxddz_h5.bs/ss_paysubrt_stream.sh  ',dd,ddd,'| /root/code/tools/newdb_tools/hxddz_h5.bs/ss_rtpaysub.js ',dd,ddd)
      // console.log(d2)
-     console.log(Math.random()*1000000000)
+     console.log(`/root/code/tools/newdb_tools/hxddz.bs/ss_ad_login_stream.sh '${d2}' | /root/code/tools/newdb_tools/hxddz.bs/ss_ad_dau_json.js  '${d2}'`)
 }
 
 

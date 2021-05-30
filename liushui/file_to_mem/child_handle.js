@@ -55,12 +55,12 @@ var readline = require('readline')
 
 
 function start() {
-	var input_name = process.argv[2] || 'in_0'
+	var input_name = process.argv[2] || 'D:/shangyoo/liushui/file_to_mem/diff.log'
 	var index = process.argv[3] || 0
 	// if(input_name==''||index==0){
 	// 	return
 	// }
-	input_name = 'F:/shangyoo/liushui/url_request/prebuy2.js'
+	// input_name = 'F:/shangyoo/liushui/url_request/prebuy2.js'
 	console.log(input_name, '+++', index)
 
 
@@ -82,12 +82,13 @@ function start() {
 		// }
 		var data = do_task(line)
 
-		// arr.push(data)
+		arr.push(data)
 
 	})
 	rl.on('close', () => {
 		console.log('readline_ok')
-		console.log(obj)
+		let set = new Set(arr);
+		console.log(set,)
 		// writer.write(arr.join('\n'))
 		// writer.end()
 	})
@@ -102,8 +103,9 @@ function start() {
 
 }
 var do_task = function(line) {
-	var data = line.toString().split(/[&]/)
-	obj[data[2]] = line
+	var data = line.toString().split(/\|/)
+	return data[1]
+	obj[data[1]] = line
 	
 }
 start()
